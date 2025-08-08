@@ -661,5 +661,92 @@ a {
     color: #ffffff; /* or any hover color you prefer */
     text-decoration: underline;
 }
+/* === MOBILE CENTERING FIX === */
+@media (max-width: 768px) {
+    /* General text alignment */
+    .features,
+    .how-it-works,
+    .about,
+    .team,
+    .footer {
+        text-align: center; /* Centers inline/inline-block children */
+    }
 
+    /* Make sure container content is centered */
+    .features h2,
+    .how-it-works h2,
+    .about-content h2,
+    .team h2 {
+        text-align: center;
+    }
+
+    /* Center the features grid */
+    .features-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .feature-card {
+        width: 100%;
+        max-width: 350px; /* Limit card width and center it */
+    }
+
+    /* How It Works: Center steps and description */
+    .steps-container {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .step,
+    .process-description {
+        text-align: center;
+    }
+
+    .arrow {
+        transform: rotate(90deg);
+        margin: 10px 0;
+    }
+
+    /* About section */
+    .about-content {
+        max-width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+
+    .about-content p {
+        text-align: center; /* Optional: change justify to center on mobile */
+    }
+
+    /* Team section already good, but ensure grid is centered */
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .team-member {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    /* Footer */
+    .footer-logo {
+        max-width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .footer-logo p {
+        text-align: center;
+    }
+}
         
