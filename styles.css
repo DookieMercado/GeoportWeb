@@ -661,92 +661,127 @@ a {
     color: #ffffff; /* or any hover color you prefer */
     text-decoration: underline;
 }
-/* === MOBILE CENTERING FIX === */
-@media (max-width: 768px) {
-    /* General text alignment */
-    .features,
-    .how-it-works,
-    .about,
-    .team,
-    .footer {
-        text-align: center; /* Centers inline/inline-block children */
+/* Extra Small Devices (max-width: 480px) */
+@media (max-width: 480px) {
+    nav ul {
+        gap: 10px;
+        flex-wrap: wrap;
     }
 
-    /* Make sure container content is centered */
-    .features h2,
-    .how-it-works h2,
-    .about-content h2,
-    .team h2 {
-        text-align: center;
+    nav a {
+        font-size: 12px;
     }
 
-    /* Center the features grid */
+    .hero h1 {
+        font-size: 22px;
+    }
+
+    .geoport-logo {
+        max-width: 280px;
+    }
+
+    .download-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
     .features-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        padding: 0 15px;
-        box-sizing: border-box;
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
-    .feature-card {
-        width: 100%;
-        max-width: 350px; /* Limit card width and center it */
+    .feature-title {
+        font-size: 16px;
     }
 
-    /* How It Works: Center steps and description */
+    .feature-description {
+        font-size: 12px;
+        padding: 20px;
+    }
+
     .steps-container {
         flex-direction: column;
-        gap: 40px;
-        padding: 0 15px;
-        box-sizing: border-box;
-    }
-
-    .step,
-    .process-description {
-        text-align: center;
+        gap: 20px;
     }
 
     .arrow {
         transform: rotate(90deg);
-        margin: 10px 0;
-    }
-
-    /* About section */
-    .about-content {
-        max-width: 100%;
-        padding: 0 15px;
-        box-sizing: border-box;
-        margin: 0 auto;
+        margin: 5px 0;
     }
 
     .about-content p {
-        text-align: center; /* Optional: change justify to center on mobile */
+        font-size: 14px;
     }
 
-    /* Team section already good, but ensure grid is centered */
     .team-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 0 15px;
-        box-sizing: border-box;
+        gap: 30px;
     }
 
-    .team-member {
-        max-width: 300px;
-        margin: 0 auto;
+    .member-photo {
+        width: 140px;
+        height: 140px;
     }
 
-    /* Footer */
-    .footer-logo {
-        max-width: 100%;
-        padding: 0 15px;
-        box-sizing: border-box;
+    .member-name {
+        font-size: 18px;
     }
 
-    .footer-logo p {
-        text-align: center;
+    .member-role {
+        font-size: 14px;
     }
 }
+
+/* Small to Medium Phones (481px to 768px) */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .geoport-logo {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .download-btn {
+        padding: 12px 25px;
+        font-size: 15px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .steps-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .about-content p {
+        font-size: 15px;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+/* Tablet and Small Laptops (769px to 1024px) */
+@media (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
         
