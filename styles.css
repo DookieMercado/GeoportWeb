@@ -830,27 +830,65 @@ body {
    FOOTER
    ========================================== */
 
+/* ==========================================
+   FOOTER – with Bukidnon geometric pattern
+   ========================================== */
+
 .footer {
+    position: relative;
     background: var(--bg-darker);
     border-top: 1px solid var(--glass-border);
-    padding: 3rem 0 1rem;
+    padding: 4rem 0 1rem;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Bukidnon-inspired geometric pattern overlay */
+.footer-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;                /* very subtle */
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        /* Diamond / lozenge motif */
+        repeating-linear-gradient(
+            45deg,
+            var(--accent) 0px,
+            var(--accent) 2px,
+            transparent 2px,
+            transparent 20px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            var(--accent) 0px,
+            var(--accent) 2px,
+            transparent 2px,
+            transparent 20px
+        ),
+        /* Horizontal zigzag line */
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 38px,
+            var(--accent) 38px,
+            var(--accent) 40px,
+            transparent 40px,
+            transparent 80px
+        );
+}
+
+.footer .container {
+    position: relative;
+    z-index: 2;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
     margin-bottom: 2rem;
-    justify-items: center;
-    text-align: center;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .footer-grid {
-        justify-items: start;
-        text-align: left;
-    }
+    text-align: left;
 }
 
 .footer-section h4 {
@@ -858,20 +896,25 @@ body {
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--accent);
+    font-size: 1.1rem;
 }
 
 .footer-section p {
     color: var(--text-secondary);
     font-size: 0.9rem;
     line-height: 1.7;
+    margin-bottom: 1rem;
 }
 
 .footer-section ul {
     list-style: none;
+    padding: 0;
 }
 
 .footer-section li {
     margin-bottom: 0.8rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
 .footer-section a {
@@ -884,12 +927,24 @@ body {
     color: var(--accent);
 }
 
+/* Copyright bar */
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
     border-top: 1px solid var(--glass-border);
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
 }
 
 /* ==========================================
@@ -1035,4 +1090,17 @@ body {
     .hero-description {
         font-size: 1rem;
     }
+}
+.team-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;                  /* makes it circular */
+    object-fit: cover;                   /* crop to fill, keeps aspect ratio */
+    margin-bottom: 1rem;
+    border: 2px solid var(--glass-border);
+    transition: border-color 0.3s ease;
+}
+
+.team-card:hover .team-avatar {
+    border-color: var(--accent-warm);
 }
