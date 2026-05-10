@@ -148,7 +148,7 @@ body {
     transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* ===== Mobile navigation ===== */
+/* ===== Mobile navigation (no slide) ===== */
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -170,8 +170,8 @@ body {
         gap: 2rem;
         padding-top: 3rem;
         z-index: 10000;                /* above chatbot */
-        
-        /* No sliding – just show/hide */
+
+        /* No slide – just show/hide instantly */
         display: none;
         transition: none;              /* remove any transition */
     }
