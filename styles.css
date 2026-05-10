@@ -148,7 +148,7 @@ body {
     transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* Mobile navigation */
+/* ===== Mobile navigation ===== */
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -157,7 +157,7 @@ body {
     .nav-menu {
         position: fixed;
         top: 80px;
-        right: -100%;
+        left: 0;
         width: 100%;
         height: calc(100vh - 80px);
         background: rgba(10, 14, 39, 0.97);
@@ -169,12 +169,15 @@ body {
         align-items: center;
         gap: 2rem;
         padding-top: 3rem;
-        transition: right 0.35s ease;
-        z-index: 1000;
+        z-index: 10000;                /* above chatbot */
+        
+        /* No sliding – just show/hide */
+        display: none;
+        transition: none;              /* remove any transition */
     }
 
     .nav-menu.active {
-        right: 0;
+        display: flex;                /* appears instantly */
     }
 
     .nav-link {
