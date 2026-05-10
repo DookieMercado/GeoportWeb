@@ -1104,3 +1104,23 @@ body {
 .team-card:hover .team-avatar {
     border-color: var(--accent-warm);
 }
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;                    /* space between image and text */
+    text-decoration: none;        /* remove underline from the link */
+}
+
+.logo-img {
+    height: 40px;                 /* adjust logo size as needed */
+    width: auto;
+    display: block;
+}
+
+.logo-text {
+    font-family: var(--font-display);
+    font-size: 1.2rem;           /* slightly smaller than before to fit */
+    font-weight: 700;
+    color: var(--text-primary);
+    white-space: nowrap;         /* prevents text from wrapping */
+}
