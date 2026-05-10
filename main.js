@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   
-  // ---------- HAMBURGER MENU ----------
+
   const hamburger = document.getElementById('hamburger');
   const navMenu   = document.querySelector('.nav-menu');
   const navLinks  = document.querySelectorAll('.nav-link');
