@@ -1126,13 +1126,9 @@ body {
    FLOATING CHATBOT (with bob + typing cursor)
    ========================================== */
 
-/* ==========================================
-   FLOATING CHATBOT (full fixed version)
-   ========================================== */
-
 .chatbot-widget {
     position: fixed;
-    bottom: 30px;
+     bottom: calc(24px + env(safe-area-inset-bottom, 0px)); 
     right: 30px;
     z-index: 2147483647;          /* absolute maximum – always on top */
     font-family: var(--font-body);
@@ -1146,8 +1142,8 @@ body {
 
 /* Blue toggle button */
 .chatbot-toggle {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--accent), #0066FF);
     border: none;
