@@ -179,7 +179,7 @@ const qaDatabase = [
 },
 {
     question: 'Does the app work offline?',
-    answer: 'You need an internet connection to submit a report, but you can take photos while offline. The app will upload them automatically once you’re back online.'
+    answer: 'You need an internet connection to submit a report, and you can’t upload photos from your gallery. The app uses an integrated built-in camera system to help prevent false reports.'
 },
 {
     question: 'What if I accidentally submit a false report?',
