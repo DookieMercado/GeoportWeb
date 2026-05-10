@@ -175,7 +175,7 @@ const qaDatabase = [
     },
     {
     question: 'Is my personal data safe?',
-    answer: 'Yes. Your data is only used for verification and reporting purposes. We require resident verification to ensure reports are trustworthy, and your contact info is shared only with authorised city admins.'
+    answer: 'Yes. Your data is only used for verification and reporting purposes. We require resident verification to ensure reports are trustworthy, and your contact info is shared only with authorised system admins.'
 },
 {
     question: 'Does the app work offline?',
