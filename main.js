@@ -85,6 +85,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // (Optional) Add your Intersection Observer, counter animations, parallax, etc. here.
 
 });
+// Animate stat numbers when they scroll into view
+const statNumbers = document.querySelectorAll('.stat-number');
+let statsAnimated = false;
+
+function animateCounter(element, target) {
+    const duration = 2000;          // 2 seconds
+    const increment = target / (duration / 16);
+    let current = 0;
+
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        element.textContent = Math.floor(current) + '%';
+    }, 16);
+}
+
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !statsAnimated) {
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-target'));
+                animateCounter(stat, target);
+            });
+            statsAnimated = true;
+            statsObserver.unobserve(entry.target);   // only once
+        }
+    });
+}, { threshold: 0.5 });
+
+const trustSection = document.querySelector('.trust-section');
+if (trustSection) {
+    statsObserver.observe(trustSection);
+}
